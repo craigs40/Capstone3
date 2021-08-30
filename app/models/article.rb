@@ -4,5 +4,5 @@ class Article < ApplicationRecord
   scope :ordered_by_priority, -> { order(priority: :desc) }
   has_many :categories
   has_many :votes
-  has_one_attached :image
+  has_many_attached :images
 end

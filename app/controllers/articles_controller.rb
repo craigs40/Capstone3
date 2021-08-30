@@ -10,10 +10,16 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.created_events.build(event_params)
     if @article.save
-      redirect_to action: 'index', notice: 'Event Saved!'
+      redirect_to action: 'index', notice: 'Article Saved!'
     else
-      redirect_to action: 'new', notice: 'Event could not be saved.'
+      redirect_to action: 'new', notice: 'Article could not be saved.'
     end
+  end
+
+  def vote
+    @article = Article.all.find(params[:id])
+    Vote.create(user_name: current_user.name, article_id: @article.id)
+    redirect_to article_path(@article)
   end
 
   def show
