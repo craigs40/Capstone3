@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
 
   def vote
     @article = Article.all.find(params[:id])
-    Vote.create(user_name: current_user.name, article_id: @article.id)
+    Vote.create(user_id: current_user.id, article_id: @article.id)
     redirect_to article_path(@article)
   end
 
@@ -29,6 +29,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :image)
+    params.require(:article).permit(:title, :context, :image, :category)
   end
 end

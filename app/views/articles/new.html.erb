@@ -1,0 +1,7 @@
+<%= form_with model: @article, method: "post" do |f| %>
+    <%= f.text_field :title, placeholder: 'Enter article title here' %>
+    <%= f.file_field :image %>
+    <%= f.text_area :content, placeholder: "Enter article content here", size: "70x20" %>
+    <%= f.select :category, [ 'Business', 'Sports', 'Fashion', 'Entertainment' ], :prompt => 'Select One' %>
+    <%= f.submit "Post" %>
+<% end %>

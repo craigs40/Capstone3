@@ -1,0 +1,7 @@
+<% if user_signed_in? %>
+  <% if @article.vote?(current_user) %>
+    <%= button_to 'Vote', vote_path(@article), method: 'put', disabled: true %>
+  <% else %>
+    <%= button_to 'Vote', vote_path(@article), method: 'put' %>
+  <% end %>
+<% end %>

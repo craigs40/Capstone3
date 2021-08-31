@@ -36,8 +36,12 @@
     widget and weather and city information. -->
     <h1>Featured Article</h1>
     <article class="featured-article">
-      
+      <% popular = Vote.popular %>
+      <% popular.each do |vote| %>
+        <%= vote.article.title %>
+      <% end %>
     </article>
+    
     <!-- List of all categories in order of priority. Each category should be displayed as a square
     with its name on the top and its most recent article's title in the bottom.
     The background image should be the image of the most recent article in this category. -->
