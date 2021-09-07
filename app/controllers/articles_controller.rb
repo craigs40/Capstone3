@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @article = Article.new
   end
@@ -29,6 +31,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :context, :image, :category)
+    params.require(:article).permit(:title, :text, :image, :category)
   end
 end

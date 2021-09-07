@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_08_26_011034) do
     t.string "user_id"
     t.string "title"
     t.string "text"
+    t.string "category"
     t.datetime "created_at"
   end
 

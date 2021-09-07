@@ -1,7 +1,12 @@
+<h1>New Article</h1>
+
 <%= form_with model: @article, method: "post" do |f| %>
-    <%= f.text_field :title, placeholder: 'Enter article title here' %>
-    <%= f.file_field :image %>
-    <%= f.text_area :content, placeholder: "Enter article content here", size: "70x20" %>
-    <%= f.select :category, [ 'Business', 'Sports', 'Fashion', 'Entertainment' ], :prompt => 'Select One' %>
+    <h3>Title</h3>
+    <%= f.text_field :title, placeholder: 'Enter article title here' %><br><br>
+    <h3>Upload Article Photo</h3>
+    <%= f.file_field :image %><br><br>
+    <%= f.text_area :content, placeholder: "Enter article content here", size: "50x20" %><br><br>
+    <h3>Select Article Category</h3>
+    <%= f.select :category, [ 'Business', 'Sports', 'Fashion', 'Entertainment' ], :prompt => 'Select One' %><br><br>
     <%= f.submit "Post" %>
 <% end %>
