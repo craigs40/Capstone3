@@ -1,7 +1,21 @@
-<% if user_signed_in? %>
+<h1>Show Article</h1>
+
+<% @articles.each do |@article| %>
+  <p>Category: <%= @article.category.category %></p><br>
+  <p>Title: <%= @article.title %></p><br>
+  <%= @article.content %><br>
+  <%= @article.image %><br>
+
   <% if @article.vote?(current_user) %>
-    <%= button_to 'Vote', vote_path(@article), method: 'put', disabled: true %>
+    <%= button_to 'Vote', article_votes_path(@article), method: 'post', disabled: true %>
   <% else %>
-    <%= button_to 'Vote', vote_path(@article), method: 'put' %>
-  <% end %>
-<% end %>
+    <%= button_to 'Vote', article_votes_path(@article), method: 'post' %>
+  <% end %><br>
+
+  <p><%= @article.votes.count %> <%= (@article.votes.count) == 1 ? 'Vote' : 'Votes'%></p><br>
+
+  <%= link_to 'Edit', edit_article_path(@article.id) %>
+  <%= link_to 'Delete', article_path(@article.id), method: :delete %>
+<% end %><br><br>
+
+<%= link_to 'Back', articles_path %>

@@ -1,0 +1,23 @@
+<h1>Show Category</h1>
+
+<%= @category.name %><br><br>
+
+<% @article.each do |article| %>
+  <p>Title: <%= article.title %></p><br>
+  <%= article.content %><br>
+  <%= article.image %><br>
+
+  <% if @article.vote?(current_user) %>
+    <%= button_to 'Vote', article_votes_path(@article), method: 'post', disabled: true %>
+  <% else %>
+    <%= button_to 'Vote', article_votes_path(@article), method: 'post' %>
+  <% end %><br>
+
+  <p><%= article.votes.count %> <%= (article.votes.count) == 1 ? 'Vote' : 'Votes'%></p><br>
+
+  <%= link_to 'Edit', edit_article_path(@article.id) %>
+  <%= link_to 'Delete', article_path(@article.id), method: :delete %>
+<% end %>
+
+<%= link_to 'Add New Category', new_category_path %><br>
+<%= link_to 'Home', root_path %>

@@ -1,0 +1,6 @@
+<%= form_with model: @category, method: "post" do |f| %>
+    <h3>Category Name</h3>
+    <%= f.text_field :name, placeholder: 'Enter category name' %><br><br>
+
+    <%= f.submit "Create Category" %>
+<% end %>

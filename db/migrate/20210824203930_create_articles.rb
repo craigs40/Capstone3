@@ -3,8 +3,10 @@ class CreateArticles < ActiveRecord::Migration[6.1]
     create_table :articles do |t|
       t.string :user_id
       t.string :title
-      t.string :text
-      t.string :category
+      t.string :content
+      t.integer :category_id
+      t.integer :article_id
+
       t.datetime :created_at
     end
   end

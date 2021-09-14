@@ -2,12 +2,14 @@ class VotesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @vote = current_user.votes.new(article_id: params[:article_id])
+    @article = Article.find(params[:id])
+    @vote = Vote.create(user_id: current_user.id, article_id: @article.id)
+    redirect_to article_path(@article)
 
     if @vote.save
-      redirect_to articles_path, notice: 'You liked a post.'
+      redirect_to article_path(@article), notice: 'You liked this article!'
     else
-      redirect_to articles_path, notice: 'You cannot like this post.'
+      redirect_to article_path(@article), alert: 'Error.'
     end
   end
 end

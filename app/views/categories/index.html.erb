@@ -1,0 +1,7 @@
+<h1>All Categories</h1>
+
+<% @categories.each do |category| %>
+  <%= link_to category.name, category_path(category.id) %><br>
+<% end %><br><br>
+
+<%= link_to 'Home', root_path %>
