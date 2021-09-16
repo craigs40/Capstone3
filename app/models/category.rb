@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   has_many :articles
-  validates :name, uniqueness: true
+  validates :name, presence: true
 end

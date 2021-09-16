@@ -1,10 +1,15 @@
 <%= form_with model: @article, method: "post" do |f| %>
-    <h3>Title</h3>
-    <%= f.text_field :title, placeholder: 'Enter article title here' %><br><br>
-    <h3>Upload Article Photo</h3>
-    <%= f.file_field :image %><br><br>
-    <%= f.text_area :content, placeholder: "Enter article content here", size: "50x20" %><br><br>
-    <h3>Select Category</h3>
-    <%= f.select :category_id, [["Business", "1"], ["Sports", "2"], ["Fashion", "3"], ["Entertainment", "4"]], prompt: 'Select One' %><br><br>
-    <%= f.submit "Post" %>
+  <%= f.label :title %><br>
+  <%= f.text_field :title, placeholder: 'Enter article title here' %><br><br>
+
+  <%= f.label :image, 'Upload Photo' %>
+  <%= f.file_field :image, size: "50x20" %><br><br>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, placeholder: "Enter article content here", size: "50x20" %><br><br>
+
+  <%= f.label :category %>
+  <%= f.select :category_id, [["Business", "1"], ["Sports", "2"], ["Fashion", "3"], ["Entertainment", "4"]], prompt: 'Select One' %><br><br>
+
+  <%= f.submit %>
 <% end %>

@@ -11,10 +11,10 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.create(article_params)
-    if @article.save
+    if @article.save!
       redirect_to @article, notice: 'Article Saved!'
     else
-      render :new, notice: 'Article could not be saved.'
+      redirect_to new_article_path, alert: 'Article could not be saved.'
     end
   end
 
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @articles = Article.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def edit
