@@ -4,7 +4,6 @@ class CreateArticles < ActiveRecord::Migration[6.1]
       t.string :user_id
       t.string :title
       t.string :content
-      t.integer :category_id
       t.integer :article_id
 
       t.datetime :created_at

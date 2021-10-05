@@ -6,12 +6,19 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.all
+    @categories = Category.all
+
+    cat = params[:cat]
+    if !cat.nil?
+      @articles = Article.where(:category_id => cat)
+    else
+      @articles = Article.all
+    end
   end
 
   def create
     @article = Article.create(article_params)
-    if @article.save!
+    if @article.save
       redirect_to @article, notice: 'Article Saved!'
     else
       redirect_to new_article_path, alert: 'Article could not be saved.'
@@ -42,7 +49,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article, notice: 'Article Updated!'
     else
-      render :edit, alert: 'Article could not be updated.'
+      redirect_to @article, alert: 'Article could not be updated.'
     end
   end
 

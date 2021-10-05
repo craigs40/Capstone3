@@ -1,7 +1,7 @@
-<%= form_with model: @article, method: "post" do |f| %>
+<%= form_for @article do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title, placeholder: 'Enter article title here' %><br><br>
-  
+
   <%= f.label :image, 'Upload Photo' %><br>
   <%= f.file_field :image %><br><br>
 
@@ -9,7 +9,7 @@
   <%= f.text_area :content, placeholder: "Enter article content here", size: "50x20" %><br><br>
 
   <%= f.label :category %><br>
-  <%= f.select :category_id, [["Business", "1"], ["Sports", "2"], ["Fashion", "3"], ["Entertainment", "4"]], prompt: 'Select One' %><br><br>
+  <%= f.select :category_id, Category.all.map {|c| [c.category, c.id]} %><br><br>
 
   <%= f.submit %>
 <% end %>

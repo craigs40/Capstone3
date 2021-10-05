@@ -1,7 +1,11 @@
 <h1>All Articles</h1>
 
 <% @articles.each do |article| %>
-  <%= link_to article.title, article_path(article.id) %>
-<% end %><br><br>
+    <%= link_to article.title, article_path(article.id) %><br>
+<% end %>
+
+<% @categories.each do |category| %>
+    <%= link_to category.category, articles_path(:cat => category.id) %>
+<% end %>
 
 <%= link_to 'Post New Article', new_article_path %>
