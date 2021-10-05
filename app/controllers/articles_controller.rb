@@ -48,8 +48,8 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @blog.destroy
-    redirect_to action: :new, notice: 'Article Deleted.'
+    @article.destroy
+    redirect_to action: :index, notice: 'Article Deleted.'
   end
 
   private
