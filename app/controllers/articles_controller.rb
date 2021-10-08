@@ -27,8 +27,7 @@ class ArticlesController < ApplicationController
 
   def vote
     @article = Article.find(params[:id])
-    @vote = Vote.create(user_id: current_user.id, article_id: @article.id)
-
+    @vote = current_user.votes.new(vote_params)
     if @vote.save
       redirect_to article_path(@article), notice: 'You liked this article!'
     else

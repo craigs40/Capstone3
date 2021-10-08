@@ -36,8 +36,7 @@
     widget and weather and city information. -->
     <h1>Featured Article</h1>
     <article class="featured-article">
-      <% popular = Vote.popular %>
-      <% popular.each do |vote| %>
+      <% @popular.each do |vote| %>
         <%= vote.article.title %>
       <% end %>
     </article>
@@ -49,24 +48,24 @@
 
     <!-- business -->
     <section class="business">
-      <h3>Business</h3>
+      <h3><%= link_to "Business", "/articles?cat=1" %></h3>
     </section>
 
     <!-- sports -->
     <section class="sports">
-      <h3>Sports</h3>
+      <h3><%= link_to "Sports", "/articles?cat=2" %></h3>
 
     </section>
 
     <!-- fashion -->
     <section class="fashion">
-      <h3>Fashion</h3>
+      <h3><%= link_to "Fashion", "/articles?cat=3" %></h3>
 
     </section>
 
     <!-- entertainment -->
     <section class="entertainment">
-      <h3>Entertainment</h3>
+      <h3><%= link_to "Entertainment", "/articles?cat=4" %></h3>
 
     </section>
 

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :categories
   devise_for :users
-  root 'homepages#index'
-  put '/article/:id/vote', to: 'articles#vote', as: 'vote'
+  resources :users
+  root to: "homepages#index"
   resources :articles
-  resources :votes
+  resources :votes, only: [:create, :destroy]
 end

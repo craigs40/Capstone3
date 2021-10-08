@@ -1,11 +1,20 @@
 <h1>All Articles</h1>
 
 <% @articles.each do |article| %>
-    <%= link_to article.title, article_path(article.id) %><br>
+  <div class="d-flex flex-row">
+    <div class="p-2"><%= image_tag article.image.variant(resize: "400x400") %></div>
+    <div class="p-2">
+      <p class="">
+        <%= article.title %><br>
+        <%= article.content %>
+      </p>
+
+    </div>
+  </div><br>
 <% end %>
 
 <% @categories.each do |category| %>
-    <%= link_to category.category, articles_path(:cat => category.id) %>
+    <%= link_to category.category, articles_path(:cat => category.id) %><br><br>
 <% end %>
 
 <%= link_to 'Post New Article', new_article_path %>
