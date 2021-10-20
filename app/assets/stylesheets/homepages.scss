@@ -1,0 +1,60 @@
+a:hover {
+  text-decoration: none !important;
+}
+
+.pna {
+  padding: 8px;
+}
+
+.featured-article {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-roberto-lee-cortes.jpg);
+  background-size: cover;
+  height: 600px;
+  position: relative;
+}
+
+.featured-title,
+.featured-content {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.featured-title {
+  color: orange;
+}
+
+.featured-content {
+  color: white;
+}
+
+.business,
+.sports,
+.fashion,
+.entertainment {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: cover;
+  height: 300px;
+}
+
+.business {
+  background-image: url(pexels-fauxels.jpg);
+}
+
+.sports {
+  background-image: url(pexels-tembela-bohle.jpg);
+}
+
+.fashion {
+  background-image: url(pexels-artem-beliaikin.jpg);
+}
+
+.entertainment {
+  background-image: url(pexels-luciann-photography.jpg);
+}
+
+h4 {
+  padding-top: 20px;
+}

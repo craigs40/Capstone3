@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title></title>
+    <title>Rails Capstone</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/homepages.scss">
   </head>
   <body>
     <!-- navbar -->
@@ -13,7 +14,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -24,20 +25,23 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+          <li class="nav-item pna">
+            <%= link_to 'Post New Article', new_article_path %>
           </li>
         </ul>
+        <span class="nav-item">
+          <%= current_user.email %> | <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+        </span>
       </div>
     </nav>
 
     <!-- Featured article with full-width image and title in the first row.
     This should be an article with the biggest number of votes. Skip the carousel
     widget and weather and city information. -->
-    <h1>Featured Article</h1>
     <article class="featured-article">
       <% @popular.each do |vote| %>
-        <%= vote.article.title %>
+        <h1 class="featured-title"><%= vote.article.title %><br><br></h1>
+        <strong class="featured-content"><%= vote.article.content %></strong>
       <% end %>
     </article>
 
@@ -45,31 +49,34 @@
     with its name on the top and its most recent article's title in the bottom.
     The background image should be the image of the most recent article in this category. -->
 
+    <div class="container-fluid">
+      <div class="row">
+        <!-- business -->
+        <section class="col-sm business">
+          <h4><%= link_to "Business", "/articles?cat=1", class: "category", style: "color: orange" %></h4>
+        </section>
 
-    <!-- business -->
-    <section class="business">
-      <h3><%= link_to "Business", "/articles?cat=1" %></h3>
-    </section>
+        <!-- sports -->
+        <section class="col-sm sports">
+          <h4><%= link_to "Sports", "/articles?cat=2", class: "category", style: "color: orange" %></h4>
 
-    <!-- sports -->
-    <section class="sports">
-      <h3><%= link_to "Sports", "/articles?cat=2" %></h3>
+        </section>
 
-    </section>
+        <!-- fashion -->
+        <section class="col-sm fashion">
+          <h4><%= link_to "Fashion", "/articles?cat=3", class: "category", style: "color: orange" %></h4>
 
-    <!-- fashion -->
-    <section class="fashion">
-      <h3><%= link_to "Fashion", "/articles?cat=3" %></h3>
+        </section>
 
-    </section>
+        <!-- entertainment -->
+        <section class="col-sm entertainment">
+          <h4><%= link_to "Entertainment", "/articles?cat=4", class: "category", style: "color: orange" %></h4>
 
-    <!-- entertainment -->
-    <section class="entertainment">
-      <h3><%= link_to "Entertainment", "/articles?cat=4" %></h3>
+        </section>
+      </div>
+    </div>
 
-    </section>
 
-    <%= link_to 'Post New Article', new_article_path %>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
