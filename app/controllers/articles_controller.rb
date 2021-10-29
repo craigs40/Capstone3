@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
     if !cat.nil?
       @articles = Article.where(:category_id => cat)
     else
-      @articles = Article.all
+      @articles = Article.order(created_at: :desc)
     end
   end
 

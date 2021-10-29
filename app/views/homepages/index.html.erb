@@ -43,29 +43,27 @@
 
     <div class="container-fluid">
       <div class="row">
-        <!-- business -->
-        <section class="col-sm business">
+
+        <section class="col-sm business" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= (url_for(@recent_business_article.image)) %>)">
           <h4><%= link_to "Business", "/articles?cat=1", class: "category", style: "color: orange" %></h4>
           <p class="latest">Latest Article: <%= @recent_business_article.title %></p>
         </section>
 
-        <!-- sports -->
-        <section class="col-sm sports">
+        <section class="col-sm sports" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= (url_for(@recent_sports_article.image)) %>)">
           <h4><%= link_to "Sports", "/articles?cat=2", class: "category", style: "color: orange" %></h4>
           <p class="latest">Latest Article: <%= @recent_sports_article.title %></p>
         </section>
 
-        <!-- fashion -->
-        <section class="col-sm fashion">
+        <section class="col-sm fashion" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= (url_for(@recent_fashion_article.image)) %>)">
           <h4><%= link_to "Fashion", "/articles?cat=3", class: "category", style: "color: orange" %></h4>
           <p class="latest">Latest Article: <%= @recent_fashion_article.title %></p>
         </section>
 
-        <!-- entertainment -->
-        <section class="col-sm entertainment">
+        <section class="col-sm entertainment" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= (url_for(@recent_entertainment_article.image)) %>)">
           <h4><%= link_to "Entertainment", "/articles?cat=4", class: "category", style: "color: orange" %></h4>
           <p class="latest">Latest Article: <%= @recent_entertainment_article.title %></p>
         </section>
+        
       </div>
     </div>
 

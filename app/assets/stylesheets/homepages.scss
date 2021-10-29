@@ -11,15 +11,11 @@ a:hover {
 }
 
 .featured-article {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-roberto-lee-cortes.jpg);
+  background-image: url(pexels-roberto-lee-cortes.jpg);
   background-size: cover;
   width: 100%;
   height: 600px;
   position: relative;
-}
-
-.featured-article:hover {
-  background-image: url(pexels-roberto-lee-cortes.jpg);
 }
 
 .featured-title,
@@ -55,38 +51,6 @@ section {
 .entertainment {
   background-size: cover;
   height: 300px;
-}
-
-.business {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-karolina-grabowska.jpg);
-}
-
-.business:hover {
-  background-image: url(pexels-karolina-grabowska.jpg);
-}
-
-.sports {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-tembela-bohle.jpg);
-}
-
-.sports:hover {
-  background-image: url(pexels-tembela-bohle.jpg);
-}
-
-.fashion {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-artem-beliaikin.jpg);
-}
-
-.fashion:hover {
-  background-image: url(pexels-artem-beliaikin.jpg);
-}
-
-.entertainment {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-luciann-photography.jpg);
-}
-
-.entertainment:hover {
-  background-image: url(pexels-luciann-photography.jpg);
 }
 
 h4 {
