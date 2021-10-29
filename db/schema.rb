@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_10_08_070238) do
   create_table "articles", force: :cascade do |t|
     t.string "user_id"
     t.string "title"
+    t.string "subtitle"
     t.string "content"
     t.integer "article_id"
     t.datetime "created_at"

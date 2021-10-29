@@ -2,59 +2,113 @@ a:hover {
   text-decoration: none !important;
 }
 
-.pna {
+.nav-item {
   padding: 8px;
+}
+
+.email {
+  color: gray;
 }
 
 .featured-article {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-roberto-lee-cortes.jpg);
   background-size: cover;
+  width: 100%;
   height: 600px;
   position: relative;
 }
 
+.featured-article:hover {
+  background-image: url(pexels-roberto-lee-cortes.jpg);
+}
+
 .featured-title,
-.featured-content {
+.featured-subtitle {
   margin-left: 20px;
   margin-bottom: 20px;
   position: absolute;
   bottom: 0;
-  left: 0;
 }
 
 .featured-title {
   color: orange;
 }
 
-.featured-content {
+.featured-subtitle {
   color: white;
+}
+
+section {
+  position: relative;
+}
+
+.latest {
+  position: absolute;
+  bottom: 0;
+  color: white;
+  font-weight: bold;
 }
 
 .business,
 .sports,
 .fashion,
 .entertainment {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-size: cover;
   height: 300px;
 }
 
 .business {
-  background-image: url(pexels-fauxels.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-karolina-grabowska.jpg);
+}
+
+.business:hover {
+  background-image: url(pexels-karolina-grabowska.jpg);
 }
 
 .sports {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-tembela-bohle.jpg);
+}
+
+.sports:hover {
   background-image: url(pexels-tembela-bohle.jpg);
 }
 
 .fashion {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-artem-beliaikin.jpg);
+}
+
+.fashion:hover {
   background-image: url(pexels-artem-beliaikin.jpg);
 }
 
 .entertainment {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pexels-luciann-photography.jpg);
+}
+
+.entertainment:hover {
   background-image: url(pexels-luciann-photography.jpg);
 }
 
 h4 {
   padding-top: 20px;
+  text-decoration: underline;
+  text-decoration-color: orange;
+}
+
+footer {
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.fa {
+  padding: 10px;
+}
+
+.footer-copyright {
+  color: gray;
+  padding-top: 7px;
 }

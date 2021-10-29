@@ -1,3 +1,23 @@
-// Place all the styles related to the Categories controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+nav {
+  max-height: 50px;
+}
+
+.form {
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+.article-show-body,
+.show-links {
+  margin: auto;
+  width: 50%;
+}
+
+.show-links {
+  padding-top: 20px;
+}

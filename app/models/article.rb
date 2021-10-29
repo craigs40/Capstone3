@@ -5,5 +5,20 @@ class Article < ApplicationRecord
   has_many :votes, dependent: :destroy
   has_many :users
   has_one_attached :image
-  validates :title, :image, :content, :category_id, presence: true
+  validates :image, :category_id, presence: true
+  validates :title,
+            presence: true,
+            length: { maximum: 60 },
+            on: :create,
+            allow_nil: false
+  validates :subtitle,
+            presence: true,
+            length: { maximum: 150 },
+            on: :create,
+            allow_nil: false
+  validates :content,
+            presence: true,
+            length: { maximum: 5200 },
+            on: :create,
+            allow_nil: false
 end

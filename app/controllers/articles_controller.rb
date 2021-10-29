@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
+    @popular = Vote.popular
     @categories = Category.all
 
     cat = params[:cat]
@@ -61,6 +62,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :content, :image, :category_id)
+    params.require(:article).permit(:title, :subtitle, :content, :image, :category_id)
   end
 end

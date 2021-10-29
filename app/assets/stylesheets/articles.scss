@@ -1,3 +1,26 @@
-// Place all the styles related to the Articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+}
+
+nav {
+  flex: 1 100%;
+}
+
+.top {
+  padding-top: 10px;
+}
+
+.col-sm-6 {
+  padding-bottom: 5px;
+}
+
+.body {
+  width: 300px;
+  padding-left: 10px;
+}
+
+footer {
+  margin-top: auto;
+}
