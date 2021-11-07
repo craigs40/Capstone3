@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :categories
+  devise_for :users
+  resources :users
+  root to: 'homepages#index'
+  resources :articles
+  resources :votes, only: %i[create destroy]
 end
