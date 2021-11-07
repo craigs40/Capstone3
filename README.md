@@ -1,24 +1,63 @@
-# README
+# Capstone 3: Rails magazine application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Alt text](/app/assets/images/capp3.PNG)
 
-Things you may want to cover:
+> This project built for the Ruby on Rails capstone is based on lifestyle articles website here: https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby v3.0.1
+- Ruby on Rails v6.1.4.1
 
-* Configuration
+## Live Demo
 
-* Database creation
+[heroku app]
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+Instal gems with:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+bundle install
+```
 
-* Deployment instructions
+Setup database with:
 
-* ...
+```
+   rails db:create
+   rails db:migrate
+```
+
+Start server with:
+
+```
+    rails server
+```
+
+Open `http://localhost:3000/` in your browser.
+
+### Deployment
+
+Heroku
+
+
+## Authors
+
+👤 **Shay Craig**
+
+- GitHub: [@craigs40](https://github.com/craigs40)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Special thanks to all TSEs involved in improving this project.
