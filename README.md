@@ -2,7 +2,7 @@
 
 ![Alt text](/app/assets/images/capp3.PNG)
 
-> This project built for the Ruby on Rails capstone is based on lifestyle articles website here: https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version
+> This project, built for the Ruby on Rails capstone, is based on the lifestyle articles website here: https://www.behance.net/gallery/14554909/liFEsTlye-Mobile-version
 
 ## Built With
 
