@@ -11,11 +11,11 @@ class ArticlesController < ApplicationController
     @categories = Category.all
 
     cat = params[:cat]
-    if !cat.nil?
-      @articles = Article.where(:category_id => cat)
-    else
-      @articles = Article.order(created_at: :desc)
-    end
+    @articles = if !cat.nil?
+                  Article.where(category_id: cat)
+                else
+                  Article.order(created_at: :desc)
+                end
   end
 
   def create
