@@ -1,0 +1,75 @@
+.new_user {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.container {
+  border-radius: 50px;
+  background: linear-gradient(145deg, #fff, #d7d6d6);
+  box-shadow:
+    11px 11px 16px #cbcaca,
+    -11px -11px 16px #fff;
+  margin-top: 50px;
+  padding-top: 10px;
+  width: 50%;
+}
+
+#user_email,
+#user_password,
+#user_password_confirmation {
+  padding: 10px 10px 10px 15px;
+  border: none;
+  outline: none;
+  background-color: #e8e7e7;
+  font-size: 15px;
+  color: #555;
+  border-radius: 25px;
+  box-shadow:
+    inset 8px 8px 8px #cbced1,
+    inset -8px -8px 8px #fff;
+}
+
+.form-check {
+  margin-top: 5px;
+}
+
+.btn {
+  box-shadow:
+    11px 11px 16px #cbcaca,
+    -11px -11px 16px #fff;
+}
+
+@media (max-width: 375px) {
+  .container,
+  .new_user {
+    width: 90%;
+  }
+
+  .container {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .container,
+  .new_user {
+    width: 90%;
+  }
+
+  .container {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 1024px) {
+  .container {
+    margin-top: 25px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container,
+  .new_user {
+    width: 40%;
+  }
+}
