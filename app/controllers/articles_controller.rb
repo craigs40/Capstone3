@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
+    @articles = Article.order(created_at: :desc)
     @popular = Vote.popular
     @categories = Category.all
 
