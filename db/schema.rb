@@ -10,6 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+# rubocop:disable Metrics/BlockLength
+
 ActiveRecord::Schema.define(version: 20_211_008_070_238) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
@@ -86,3 +88,5 @@ ActiveRecord::Schema.define(version: 20_211_008_070_238) do
   add_foreign_key 'votes', 'articles'
   add_foreign_key 'votes', 'users'
 end
+
+# rubocop:enable Metrics/BlockLength
