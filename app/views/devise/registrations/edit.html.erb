@@ -4,21 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Rails Capstone</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/homepages.scss">
-    <link rel="stylesheet" href="/stylesheets/categories.scss">
+    <%= stylesheet_link_tag "homepages", :media => "all" %>
+    <%= stylesheet_link_tag "categories", :media => "all" %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="cat-body">
 
-    <div class="d-block form">
+    <div class="container d-block form">
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <div class="field">
-          <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
         </div>
 
@@ -27,7 +25,7 @@
         <% end %>
 
         <div class="field">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <i>(leave blank if you don't want to change it)</i><br />
           <%= f.password_field :password, autocomplete: "new-password" %>
           <% if @minimum_password_length %>
             <br />
@@ -36,12 +34,11 @@
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
         </div>
 
         <div class="field">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+          <i>(we need your current password to confirm your changes)</i><br />
           <%= f.password_field :current_password, autocomplete: "current-password" %>
         </div>
 
@@ -57,14 +54,14 @@
       <%= link_to "Back", :back %>
     </div>
 
-    <footer class="bg-dark d-flex">
-      <div class="d-inline-flex">
-        <a class="navbar-brand" href="#">CaPsToNe.</a>
+    <footer class="container-fluid bg-dark d-flex">
+      <div class="foot1">
+        <a class="navbar-brand mx-0" href="#">CaPsToNe.</a>
       </div>
-      <div class="d-inline-flex footer-copyright text-center">
+      <div class="footer-copyright text-center">
         © 2021 Copyright
       </div>
-      <div class="d-inline-flex social">
+      <div class="social">
         <a href="#" class="fa fa-facebook-square"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-tumblr"></a>
@@ -72,8 +69,4 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
 </html>

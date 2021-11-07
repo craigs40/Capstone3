@@ -7,6 +7,12 @@ gem 'devise'
 
 gem 'image_processing'
 
+gem 'bootstrap', '~> 5.1.0'
+
+gem 'bootstrap_form', '~> 4.0'
+
+gem 'jquery-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
 # Use postgresql as the database for Active Record

@@ -4,9 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Rails Capstone</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/stylesheets/homepages.scss">
-    <link rel="stylesheet" href="/stylesheets/categories.scss">
+    <%= stylesheet_link_tag "homepages", :media => "all" %>
+    <%= stylesheet_link_tag "categories", :media => "all" %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="cat-body">
@@ -36,19 +35,19 @@
 
     <p id="notice"><%= notice %></p>
 
-    <div class="d-block form">
-      <table>
-        <thead>
+    <div class="container d-flex cat-table">
+      <table class="table table-hover table-borderless table-sm">
+        <thead class="table-light">
           <tr>
-            <th>Category</th>
-            <th colspan="3"></th>
+            <th scope="col">Category</th>
+            <th colspan="23"></th>
           </tr>
         </thead>
 
         <tbody>
           <% @categories.each do |category| %>
             <tr>
-              <td><%= category.category %></td>
+              <th scope="row"><%= category.category %></th>
               <td><%= link_to 'Show', category %></td>
               <td><%= link_to 'Edit', edit_category_path(category) %></td>
               <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -56,20 +55,20 @@
           <% end %>
         </tbody>
       </table>
+    </div>
 
-      <br>
-
+    <div class="container text-center">
       <%= link_to 'New Category', new_category_path %>
     </div>
 
-    <footer class="bg-dark d-flex">
-      <div class="d-inline-flex">
-        <a class="navbar-brand" href="#">CaPsToNe.</a>
+    <footer class="container-fluid bg-dark d-flex cat-foot">
+      <div class="foot1">
+        <a class="navbar-brand mx-0" href="#">CaPsToNe.</a>
       </div>
-      <div class="d-inline-flex footer-copyright text-center">
+      <div class="footer-copyright text-center">
         © 2021 Copyright
       </div>
-      <div class="d-inline-flex social">
+      <div class="social">
         <a href="#" class="fa fa-facebook-square"></a>
         <a href="#" class="fa fa-twitter"></a>
         <a href="#" class="fa fa-tumblr"></a>
@@ -77,8 +76,5 @@
       </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
