@@ -9,6 +9,8 @@
 # rubocop:disable Metrics/PerceivedComplexity
 # rubocop:disable Layout/LineLength
 # rubocop:disable Metrics/MethodLength
+# rubocop:disable Style/IfUnlessModifier
+# rubocop:disable Metrics/AbcSize
 
 require 'rubygems'
 
@@ -16,7 +18,7 @@ m = Module.new do
   module_function
 
   def invoked_as_script?
-    File.expand_path($0) == File.expand_path(__FILE__)
+    File.expand_path($PROGRAM_NAME) == File.expand_path(__FILE__)
   end
 
   def env_var_version
@@ -30,12 +32,12 @@ m = Module.new do
     bundler_version = nil
     update_index = nil
     ARGV.each_with_index do |a, i|
-    if update_index && update_index.succ == i && a =~ Gem::Version::ANCHORED_VERSION_PATTERN
-      bundler_version = a
-    end
+      if update_index && update_index.succ == i && a =~ Gem::Version::ANCHORED_VERSION_PATTERN
+        bundler_version = a
+      end
       next unless a =~ /\A--bundler(?:[= ](#{Gem::Version::VERSION_PATTERN}))?\z/
 
-      bundler_version = $1
+      bundler_version = 'Regexp.last_match(1)'
       update_index = i
     end
     bundler_version
@@ -45,7 +47,7 @@ m = Module.new do
     gemfile = ENV['BUNDLE_GEMFILE']
     return gemfile if gemfile && !gemfile.empty?
 
-    File.expand_path('../../Gemfile', __FILE__)
+    File.expand_path('../Gemfile', __dir__)
   end
 
   def lockfile
@@ -122,10 +124,12 @@ end
 m.load_bundler!
 
 if m.invoked_as_script?
-  load Gem.bin_path("bundler", "bundle")
+  load Gem.bin_path('bundler', 'bundle')
 end
 
 # rubocop:enable Metrics/CyclomaticComplexity
 # rubocop:enable Metrics/PerceivedComplexity
 # rubocop:enable Layout/LineLength
 # rubocop:enable Metrics/MethodLength
+# rubocop:enable Style/IfUnlessModifier
+# rubocop:enable Metrics/AbcSize
