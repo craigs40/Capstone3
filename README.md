@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-[heroku app]
+https://rorcap.herokuapp.com/
 
 ## Getting Started
 
@@ -24,7 +24,6 @@ bundle install
 Setup database with:
 
 ```
-   rails db:create
    rails db:migrate
 ```
 
