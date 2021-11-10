@@ -9,6 +9,9 @@
 - Ruby v3.0.1
 - Ruby on Rails v6.1.4.1
 
+## Live Demo
+
+https://rorcap.herokuapp.com/
 
 ## Getting Started
 
@@ -31,6 +34,10 @@ Start server with:
 ```
 
 Open `http://localhost:3000/` in your browser.
+
+### Deployment
+
+Heroku
 
 
 ## Authors
