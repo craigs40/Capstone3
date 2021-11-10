@@ -1,5 +1,3 @@
-# rubocop:disable Style/NegatedIfElseCondition
-
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
 
@@ -68,5 +66,3 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :subtitle, :content, :image, :category_id)
   end
 end
-
-# rubocop:enable Style/NegatedIfElseCondition
