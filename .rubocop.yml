@@ -1,2 +1,17 @@
 Layout/EndOfLine:
    Enabled: False
+
+Style/FrozenStringLiteralComment:
+  Enabled: False
+
+Style/Documentation:
+  Enabled: False
+
+Style/InverseMethods:
+  Enabled: False
+
+Metrics/BlockLength:
+  Enabled: False
+
+Style/ClassAndModuleChildren:
+  Enabled: False
