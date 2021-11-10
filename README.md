@@ -9,9 +9,6 @@
 - Ruby v3.0.1
 - Ruby on Rails v6.1.4.1
 
-## Live Demo
-
-[heroku app]
 
 ## Getting Started
 
@@ -24,7 +21,6 @@ bundle install
 Setup database with:
 
 ```
-   rails db:create
    rails db:migrate
 ```
 
@@ -35,10 +31,6 @@ Start server with:
 ```
 
 Open `http://localhost:3000/` in your browser.
-
-### Deployment
-
-Heroku
 
 
 ## Authors
